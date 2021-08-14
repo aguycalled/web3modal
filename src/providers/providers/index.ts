@@ -20,10 +20,20 @@ import DcentWalletLogo from "../logos/dcentwallet.png";
 import BitskiLogo from "../logos/bitski.svg";
 // @ts-ignore
 import FrameLogo from "../logos/frame.svg";
+// @ts-ignore
+import BscLogo from "./logos/firebox.png";
 
 import { IProviderInfo } from "../../helpers";
 
 export * from "../injected";
+
+export const BSC: IProviderInfo = {
+  id: "bsc",
+  name: "Binance Chain Wallet",
+  logo: BscLogo,
+  type: "web",
+  check: "isBsc",
+};
 
 export const WALLETCONNECT: IProviderInfo = {
   id: "walletconnect",
