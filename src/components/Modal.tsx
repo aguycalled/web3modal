@@ -17,6 +17,7 @@ declare global {
     ethereum: any;
     web3: any;
     updateWeb3Modal: any;
+    BinanceChain: any;
   }
 }
 

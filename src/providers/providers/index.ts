@@ -21,7 +21,7 @@ import BitskiLogo from "../logos/bitski.svg";
 // @ts-ignore
 import FrameLogo from "../logos/frame.svg";
 // @ts-ignore
-import BscLogo from "./logos/firebox.png";
+import BscLogo from "../logos/bsc.jpg";
 
 import { IProviderInfo } from "../../helpers";
 
