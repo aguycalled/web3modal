@@ -1,7 +1,9 @@
 const ConnectToBinance = async (BscConnectProvider: any) => {
   const provider = new BscConnectProvider();
-  
-  return provider;
+
+  await provider.activate();
+
+  return provider.getProvider();
 };
 
 export default ConnectToBinance;
