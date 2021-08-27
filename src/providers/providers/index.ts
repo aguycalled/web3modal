@@ -22,6 +22,7 @@ import BitskiLogo from "../logos/bitski.svg";
 import FrameLogo from "../logos/frame.svg";
 // @ts-ignore
 import BscLogo from "../logos/bsc.jpg";
+import MetaMaskLogo from "../logos/metamask.svg";
 
 import { IProviderInfo } from "../../helpers";
 
@@ -33,6 +34,14 @@ export const BSC: IProviderInfo = {
   logo: BscLogo,
   type: "web",
   check: "isBsc",
+}
+
+export const NOINDEXEDPROVIDER: IProviderInfo = {
+  id: "noinjectedprovider",
+  name: "Install MetaMask",
+  logo: MetaMaskLogo,
+  type: "noinjected",
+  check: "returnTrue"
 };
 
 export const WALLETCONNECT: IProviderInfo = {
