@@ -2,6 +2,11 @@
 
 A single Web3 / Ethereum provider solution for all Wallets
 
+This forked version has one more option, that original Repository misses. The option is to show a Hint in popup, if no injected provider was found in browser.
+For now, it's a fixed text asking to install metamask. In future, it could be customized.
+
+One disadvantage of the code, is the missing injected option in popup is added as a provider. However, semantically this is wrong. Happy, if someone is changing the code to use semantically correct code architecture for it.
+
 ## Introduction
 
 Web3Modal is an easy-to-use library to help developers add support for multiple providers in their apps with a simple customizable configuration.
@@ -10,9 +15,13 @@ By default Web3Modal Library supports injected providers like (**Metamask**, **D
 
 ## Preview
 
-You can test the library on: https://web3modal.com/
+You can test the library on: https://blocklords.github.io/cws-swap/
 
-![preview](./images/preview.gif)
+In Google Chrome browser with installed MetaMask extension
+![preview](./images/chrome.png)
+
+In Microsoft Edge browser without any injected wallet providers:
+![preview](./images/edge.png)
 
 ## Projects using `web3modal`
 
@@ -65,6 +74,7 @@ const providerOptions = {
 const web3Modal = new Web3Modal({
   network: "mainnet", // optional
   cacheProvider: true, // optional
+  displayNoInjectedProvider: true, // optional
   providerOptions // required
 });
 
@@ -93,6 +103,7 @@ const providerOptions = {
 const web3Modal = new Web3Modal({
   network: "mainnet", // optional
   cacheProvider: true, // optional
+  displayNoInjectedProvider: true, // optional
   providerOptions // required
 });
 
@@ -142,6 +153,7 @@ These are all the providers available with Web3Modal and how to configure their 
 - [DCent](./docs/providers/dcent.md)
 - [BurnerConnect](./docs/providers/burnerconnect.md)
 - [MEWConnect](./docs/providers/mewconnect.md)
+- [NoIndexedProvider](./docs/providers/noindexedprovider.md)
 
 ## API
 
@@ -347,6 +359,14 @@ By default is set to `false` and Web3Modal always displays InjectedProvider as a
 
 ```javascript
 const web3Modal = new Web3Modal({ disableInjectedProvider: true });
+```
+
+### Display No Injected Provider in Popup
+
+By default is set to `true` and Web3Modal always displays NoInjectedProvider as an option to the user if available. However you can disable it as an optional flag if you desire:
+
+```javascript
+const web3Modal = new Web3Modal({ displayNoInjectedProvider: false });
 ```
 
 ### Cache Provider
